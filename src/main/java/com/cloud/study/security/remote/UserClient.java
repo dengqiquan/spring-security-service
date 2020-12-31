@@ -15,7 +15,11 @@ import org.springframework.web.bind.annotation.RequestParam;
  */
 @FeignClient(name = "cloud-user-service",fallback = UserClientFallback.class,url = "http://localhost:9003")
 public interface UserClient {
-
+    /**
+     * 根据用户名获取用户信息
+     * @param userName
+     * @return
+     */
     @RequestMapping(value = "getUser/by/name",method = RequestMethod.GET)
     Response<HrDto> getEpUserByName(@RequestParam("userName") String userName);
 }

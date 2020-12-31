@@ -1,0 +1,20 @@
+server:
+  port: 9002
+spring:
+  application:
+    name: cloud-security-service
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      config:
+        server-addr: ${NACOS-HOST:60.205.168.11}:${NACOS-PORT:8848}
+#        server-addr: ${NACOS-HOST:localhost}:${NACOS-PORT:8848}
+        file-extension: yml
+        prefix: common
+      discovery:
+        server-addr: ${NACOS-HOST:60.205.168.11}:${NACOS-PORT:8848}
+#        server-addr: ${NACOS-HOST:localhost}:${NACOS-PORT:8848}
+
+
+

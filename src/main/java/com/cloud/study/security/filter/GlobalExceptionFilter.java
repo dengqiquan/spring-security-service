@@ -15,7 +15,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @ControllerAdvice
 public class GlobalExceptionFilter {
 
-    //捕捉到的异常
+    /**
+     * 异常捕获
+     * @param exception
+     * @return
+     */
     @ExceptionHandler(value = SecurityGlobalException.class)
     @ResponseBody
     public Response handleServiceException(SecurityGlobalException exception) {
